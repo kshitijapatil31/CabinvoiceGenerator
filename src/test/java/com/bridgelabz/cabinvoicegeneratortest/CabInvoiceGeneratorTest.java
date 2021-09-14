@@ -16,6 +16,15 @@ public class CabInvoiceGeneratorTest {
 		double distance=0.3;
 		int time=5;
 		double result=cabInvoiceGenerator.calculatefare(distance, time);
-		Assert.assertEquals(25, result);
+		Assert.assertEquals(53, result,0.0);
+	}
+	
+	@Test
+	public void givenDistanceAndTime_invoiceGenerator_shouldReturnminimumFare() {
+		CabInvoiceGenerator cabInvoiceGenerator=new CabInvoiceGenerator();
+		double distance=0.3;
+		int time=5;
+		double result=cabInvoiceGenerator.calculatefare(distance, time);
+		Assert.assertEquals(5, result,0.0);
 	}
 }
