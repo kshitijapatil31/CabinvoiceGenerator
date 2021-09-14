@@ -12,5 +12,18 @@ int minimumFare=5;
 	}else {
 		return 0.0;
 	}
+<<<<<<< HEAD
+=======
+	}
+	public double calculatefare(Ride[] rides) {
+		double totalfare=0;
+		for(Ride ride:rides) {
+			totalfare+=this.calculatefare(ride.distance,ride.time);
+		}
+		
+		return totalfare;
+		
+		
+>>>>>>> uc2
 	}
 }
