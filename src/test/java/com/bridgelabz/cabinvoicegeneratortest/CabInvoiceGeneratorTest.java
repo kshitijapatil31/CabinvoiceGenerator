@@ -6,6 +6,7 @@ import com.bridgelabz.cabinvoicegenerator.CabInvoiceGenerator;
 import com.bridgelabz.cabinvoicegenerator.InvoiceSummery;
 import com.bridgelabz.cabinvoicegenerator.Ride;
 
+
 import org.junit.Assert;
 import org.junit.Before;
 
@@ -48,4 +49,28 @@ public class CabInvoiceGeneratorTest {
 		
 		Assert.assertEquals(expectedInvoicesummery, summery);
 	}
+	@Test
+	
+	public void givenUserId_InvoiceGenerator_shouldReturnRides() {
+		
+		Ride[] rides1= {
+				new Ride(2.0,5),
+				new Ride(0.1,1),
+				new Ride(3.0,6)
+				};
+		Ride[] rides2= {
+				new Ride(4.0,5),
+				new Ride(2.0,1),
+				new Ride(5.0,6)
+				};
+		cabInvoiceGenerator.listOfRides(rides1,1);
+	
+		Assert.assertEquals("InvoiceSummary{noOfRides=3, totalFare=30.0, average=15.0}",cabInvoiceGenerator.invoicePerId(1));
+		cabInvoiceGenerator.listOfRides(rides2,2);
+		
+		Assert.assertEquals("InvoiceSummary{noOfRides=3, totalFare=40.0, average=185.0}",cabInvoiceGenerator.invoicePerId(2));
+	}
 }
+
+
+
