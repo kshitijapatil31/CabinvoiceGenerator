@@ -32,5 +32,12 @@ public class InvoiceSummery {
 		return true;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "InvoiceSummery [numOfrides=" + numOfrides + ", totalFare=" + totalFare + ", average=" + average + "]";
+	}
+
 	
 }
